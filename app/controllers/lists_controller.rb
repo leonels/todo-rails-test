@@ -1,4 +1,11 @@
 class ListsController < ApplicationController
+  
+  helper_method :sort_column, :sort_direction
+
+  before_filter only: :show do
+    @list = List.find(params[:id])
+  end
+
   # GET /lists
   def index
     @lists = List.all
@@ -12,6 +19,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   def show
     @list = List.find(params[:id])
+    @tasks = @list.tasks.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html
@@ -79,4 +87,15 @@ class ListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    
+  def sort_column
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+    
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

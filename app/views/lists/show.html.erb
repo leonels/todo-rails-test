@@ -1,11 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div id="notice" class="alert alert-success"><%= notice %></div>
 
-<p>
-  <b>Title:</b>
-  <%= @list.title %>
-</p>
+<h1><%= @list.title %> <small>To-Do List</small></h1>
 
-<%= link_to 'Tasks', list_tasks_path(@list) %> |
+<table class="table table-striped table-bordered table-hover">
+  <tr>
+    <th>Task</th>
+    <th><%= sortable 'due_at' %></th>
+    <th>Complete?</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @tasks.each do |task| %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.due_at %></td>
+      <td><%= task.complete %></td>
+      <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+      <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></td>
+    </tr>
+  <% end %>
+</table>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<br />
+
+<%= link_to 'Back', lists_path, class: 'btn btn-default' %>
+<%= link_to 'New Task', new_list_task_path(@list), class: 'btn btn-default' %>
