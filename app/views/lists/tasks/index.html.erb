@@ -1,6 +1,6 @@
 <h1>List Tasks</h1>
 
-<table>
+<table class="table table-striped table-bordered table-hover">
   <tr>
     <th>Name</th>
     <th><%= sortable 'due_at' %></th>
@@ -23,5 +23,5 @@
 
 <br />
 
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'New Task', new_list_task_path(@list) %>
+<%= link_to 'Back', lists_path, class: 'btn btn-default' %>
+<%= link_to 'New Task', new_list_task_path(@list), class: 'btn btn-default' %>
