@@ -1,27 +1,40 @@
-<div id="notice" class="alert alert-success"><%= notice %></div>
 
-<h1><%= @list.title %> <small>To-Do List</small></h1>
+<% if notice %>
+  <div id="notice" class="alert alert-info"><%= notice %></div>
+<% end %>
 
-<table class="table table-striped table-bordered table-hover">
-  <tr>
-    <th>Task</th>
-    <th><%= sortable 'due_at' %></th>
-    <th>Complete?</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @tasks.each do |task| %>
-    <tr>
-      <td><%= task.name %></td>
-      <td><%= task.due_at %></td>
-      <td><%= task.complete %></td>
-      <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
-      <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></td>
-    </tr>
+<% if @tasks.size == 0 %>
+  <% if flash[:success] %>
+    <div class="alert alert-success"><%= flash[:success] %></div>
   <% end %>
-</table>
 
-<br />
+  <em>Start adding tasks</em>
+<% else %>
+
+  <div class="well well-lg">
+    <h1><%= @list.title %> <small>To-Do List</small></h1>
+    <ul class="list-inline">
+      <li><%= sortable 'due_at' %></li>
+      <li><%= sortable 'name' %></li>
+    </ul>
+  </div>
+
+  <div class="row">
+    <% @tasks.each do |task| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <div class="caption">
+            <h2><%= task.name %></h2>
+            <p><%= task.due_at %></p>
+            <p><%= task.complete %></p>
+            <p><%= link_to 'Edit', edit_list_task_path(@list, task) %></p>
+            <p><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, confirm: 'Are you sure?' %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', lists_path, class: 'btn btn-default' %>
 <%= link_to 'New Task', new_list_task_path(@list), class: 'btn btn-default' %>

@@ -53,7 +53,8 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to @list, notice: 'List was successfully created.' }
+        flash[:success] = "Awesome! You have just created a To-Do List. Now it's time to start adding some tasks to this list."
+        format.html { redirect_to @list }
         format.json { render json: @list, status: :created, location: @list }
       else
         format.html { render action: "new" }
@@ -68,7 +69,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.update_attributes(params[:list])
-        format.html { redirect_to @list, notice: 'List was successfully updated.' }
+        format.html { redirect_to @list, notice: 'You have successfully updated your list.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -91,7 +92,7 @@ class ListsController < ApplicationController
   private
     
   def sort_column
-    Task.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "due_at"
   end
     
   def sort_direction

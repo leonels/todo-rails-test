@@ -12,5 +12,6 @@
  *= require bootstrap-theme.min
  *= require_self
  *= require design
+ *= require bootstrap_overrides
  */
 
