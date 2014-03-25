@@ -1,6 +1,38 @@
 body {
-  margin-top:40px;
+  background-image:url('wood_pattern.png');
 }
+
+nav.navbar {
+  background-color: white;
+  background-image: none;
+  border-radius:0;
+  min-height: 80px;
+}
+
+div.navbar-header, ul.nav.navbar-nav {
+  margin-top: 15px;
+}
+
+a.navbar-brand {
+  color:black;
+  text-transform: uppercase;
+}
+
+ul.nav.navbar-nav li a {
+  color:black;
+  font-size:16px;
+  text-transform: uppercase;
+}
+
+ul.nav.navbar-nav li a:hover {
+  background-color: #60ad47;
+  color: white;
+}
+/*
+.icon-bar {
+  background-color: #60ad47;
+}
+*/
 
 a.asc:after {
   content:" \2191";
