@@ -1,0 +1,6 @@
+<tr class="task_row">
+  <td><%= f.check_box :complete %></td>
+  <td><%= f.text_field :name %></td>
+  <td><%= f.text_field :due_at, class: 'datepicker' %></td>
+  <td><%= link_to_remove_task "", f %></td>
+</tr>

@@ -7,8 +7,8 @@
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <div class="caption">
-          <h2><%= list.title %></h2>
-          <p><%= link_to 'Show', list_path(list), class: 'btn btn-default btn-sm', role: 'button' %> <%= link_to 'Edit', edit_list_path(list), class: 'btn btn-default btn-sm', role: 'button' %> <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm', role: 'button' %></p>
+          <h2><%= link_to list.title, list_path(list) %></h2>
+          <p><%= link_to '', list_path(list), class: 'btn btn-default btn- glyphicon glyphicon-eye-open', role: 'button' %> <%= link_to '', edit_list_path(list), class: 'btn btn-default glyphicon glyphicon-pencil', role: 'button' %> <%= link_to '', list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default glyphicon glyphicon-remove', role: 'button' %></p>
         </div>
       </div>
     </div>

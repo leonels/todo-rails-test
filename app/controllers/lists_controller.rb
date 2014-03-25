@@ -89,6 +89,12 @@ class ListsController < ApplicationController
     end
   end
 
+  def mark_completed_tasks
+    Task.update_all({complete: true}, {id: params[:task_ids]})
+    flash[:success] = "You have updated your To-Do list!"
+    redirect_to list_path(params[:list_id])
+  end
+
   private
     
   def sort_column

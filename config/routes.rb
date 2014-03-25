@@ -3,6 +3,9 @@ TodoRailsTest::Application.routes.draw do
     scope module: :lists do
       resources :tasks
     end
+    collection do
+      put :mark_completed_tasks
+    end
   end
 
   root to: 'lists#index'

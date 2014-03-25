@@ -9,3 +9,7 @@ a.asc:after {
 a.desc:after {
   content:" \2193";
 }
+
+a.edit-title-activator {
+  cursor: pointer;
+}
