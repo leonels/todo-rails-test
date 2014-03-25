@@ -14,5 +14,7 @@
  *= require_self
  *= require design
  *= require bootstrap_overrides
+ *= require footer
+ *= require responsiveness
  */
 

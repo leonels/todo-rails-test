@@ -56,37 +56,3 @@ a.desc:after {
 a.edit-title-activator {
   cursor: pointer;
 }
-
-@media (max-width: 768px){
-  div#navbar-collapse-1 {
-  	background-color: #333;
-  }
-
-  ul.nav.navbar-nav {
-  	padding: 0 30%;
-  }
-
-  ul.nav.navbar-nav li a {
-  	background-color: transparent;
-    border: none;
-    color: white;
-    margin-left: 0;
-  	text-align: center;
-  }
-
-  ul.nav.navbar-nav > li.active > a, ul.nav.navbar-nav > li.active > a:hover {
-    background-color: #c40022;
-    background-image: none;
-	  border-bottom: none;
-	  box-shadow: none;
-	  color: white;
-    color: white;
-	}
-
-  ul.nav.navbar-nav li a:hover {
-    background-color: black;
-    border-bottom: none;
-    color: white;
-    cursor: pointer;
-  }
-}
