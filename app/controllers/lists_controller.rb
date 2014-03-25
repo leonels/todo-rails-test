@@ -21,6 +21,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @tasks = @list.tasks.order(sort_column + ' ' + sort_direction)
 
+    @task = @list.tasks.build if @list.tasks.empty?
+
     respond_to do |format|
       format.html
       format.json { render :json => @list }
@@ -53,7 +55,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        flash[:success] = "Awesome! You have just created a To-Do List. Now it's time to start adding some tasks to this list."
+        flash[:success] = "Awesome! You have just created a To-Do List. Now it's time to start adding some tasks to it."
         format.html { redirect_to @list }
         format.json { render json: @list, status: :created, location: @list }
       else
