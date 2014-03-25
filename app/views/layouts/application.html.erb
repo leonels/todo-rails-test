@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoRailsTest</title>
+    <title>OctoDo's | Project Management</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -26,8 +26,8 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li <%= "class=active" if controller.controller_name == "lists" %>><%= link_to 'To-Do Lists', lists_path %></li>
-        <li><a>Projects</a></li>
-        <li><a>Calendar</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Calendar</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
