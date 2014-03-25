@@ -1,5 +1,9 @@
 <h1>To-Do Lists</h1>
 
+<% if alert %>
+  <div id="alert" class="alert alert-danger"><%= alert %></div>
+<% end %>
+
 <p><%= link_to 'Add a to-do list', new_list_path, class: 'btn btn-default' %></p>
 
 <div class="row">

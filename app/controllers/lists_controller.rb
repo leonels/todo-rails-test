@@ -86,7 +86,7 @@ class ListsController < ApplicationController
     @list.destroy
 
     respond_to do |format|
-      format.html { redirect_to lists_url }
+      format.html { redirect_to lists_url , alert: 'You have just deleted your To-Do List: ' +  @list.title}
       format.json { head :no_content }
     end
   end
