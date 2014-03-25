@@ -1,11 +1,12 @@
 body {
-  background-image:url('wood_pattern.png');
+  background-image: url('wood_pattern.png');
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav.navbar {
   background-color: white;
   background-image: none;
-  border-radius:0;
+  border-radius: 0;
   min-height: 80px;
 }
 
@@ -14,25 +15,35 @@ div.navbar-header, ul.nav.navbar-nav {
 }
 
 a.navbar-brand {
-  color:black;
+  color: black;
   text-transform: uppercase;
 }
 
 ul.nav.navbar-nav li a {
-  color:black;
-  font-size:16px;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 35px;
+  padding-bottom: 10px;
   text-transform: uppercase;
 }
 
+ul.nav.navbar-nav > li.active > a, ul.nav.navbar-nav > li.active > a:hover {
+  background-color: white;
+  background-image: none;
+  border-bottom: 5px solid #c40022;
+  box-shadow: none;
+  color: #333;
+}
+
 ul.nav.navbar-nav li a:hover {
-  background-color: #60ad47;
-  color: white;
+  border-bottom: 5px solid #c40022;
+  color: #333;
 }
-/*
-.icon-bar {
-  background-color: #60ad47;
+
+div.navbar-collapse {
+  border:none;
 }
-*/
 
 a.asc:after {
   content:" \2191";
