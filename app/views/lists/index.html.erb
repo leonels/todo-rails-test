@@ -4,6 +4,16 @@
 
 <p><%= link_to 'Add a to-do list', new_list_path, class: 'btn btn-default' %></p>
 
+<% if @lists.empty? %>
+
+  <div class="row lists-blank-slate">
+    <div class="col-md-12 text-center">
+      <p class="lead">Hey! You have no To-Do Lists. Feel free to click on the "Add a to-do list" button and start creating your lists.</p>
+    </div>
+  </div>
+
+<% end %>
+
 <div class="row">
   <% @lists.each do |list| %>
     <div class="col-sm-6 col-md-6">
