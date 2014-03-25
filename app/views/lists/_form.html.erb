@@ -1,6 +1,6 @@
 <%= form_for(@list, :html => {class: 'form-horizontal'}) do |f| %>
   <% if @list.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
       <ul>
         <% @list.errors.full_messages.each do |msg| %>
@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= f.label :title, class: 'control-label' %><br />
-    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_field :title, placeholder: 'Name your list', class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-default' %>

@@ -4,6 +4,8 @@ body {
 
 h1 {
   font-size:24px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 h2 {
@@ -16,4 +18,9 @@ a {
 
 a:hover {
   color: #c40022;
+}
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
 }

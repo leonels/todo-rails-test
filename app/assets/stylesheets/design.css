@@ -45,6 +45,10 @@ div.navbar-collapse {
   border:none;
 }
 
+div.content {
+  background-color: white;
+}
+
 a.asc:after {
   content:" \2191";
 }

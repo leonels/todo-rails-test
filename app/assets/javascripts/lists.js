@@ -16,6 +16,7 @@ $(document).ready(function() {
   $(".best_in_place").best_in_place();
 });
 
+/* add task field */
 $(document).ready(function() {
   $("form").on("click", ".add_fields", function(){
     var time = new Date().getTime();
@@ -25,7 +26,14 @@ $(document).ready(function() {
   });
 });
 
+/* delete a task */
 function remove_task(link){
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".task_row").hide();
 }
+
+$(document).ready(function() {
+  setTimeout(function(){
+    $(".alert").fadeOut(500);
+  }, 4000);
+});
